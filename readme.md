@@ -1,4 +1,4 @@
-  Local LLM Setup Guide  body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; } h1, h2, h3 { color: #2c5282; } .setup-container { background: #f7fafc; border-radius: 8px; padding: 20px; margin: 20px 0; } .step { background: white; border-left: 4px solid #4299e1; padding: 15px; margin: 15px 0; border-radius: 0 4px 4px 0; } code { background: #edf2f7; padding: 2px 4px; border-radius: 4px; font-family: monospace; } .warning { background: #fff5f5; border-left: 4px solid #f56565; padding: 15px; margin: 15px 0; border-radius: 0 4px 4px 0; } .code-block { background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 4px; margin: 10px 0; overflow-x: auto; } .toggle-section { cursor: pointer; padding: 10px; background: #e6f6ff; border-radius: 4px; margin: 10px 0; } .hidden { display: none; }
+# Local LLM Setup Guide 
 
 Local LLM Environment Setup Guide
 =================================
@@ -141,4 +141,3 @@ Troubleshooting
 *   Verify disk space: `df -h`
 *   Check model pulling: `ollama pull [model] --verbose`
 
-function toggleSection(id) { const section = document.getElementById(id); section.classList.toggle('hidden'); } // Initialize Prism.js for syntax highlighting Prism.highlightAll();
