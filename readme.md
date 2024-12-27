@@ -27,7 +27,6 @@ Physical setup showing Mac Mini M4 (64GB) connected to local network and devices
 *   **Enchanted:** iOS client for mobile access
 *   **UV:**Python package and project manager, written in Rust
 
-.diagram-container { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 20px 0; } .diagram-caption { text-align: center; color: #4a5568; font-style: italic; margin-top: 10px; }
 
 Prerequisites
 -------------
@@ -44,7 +43,6 @@ Prerequisites
 *   Stable internet connection
 *   Administrator access on all devices
 
-.requirements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; } .requirement-card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; } .requirement-card h3 { margin-top: 0; color: #2d3748; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
 
 Step-by-Step Setup Instructions
 -------------------------------
