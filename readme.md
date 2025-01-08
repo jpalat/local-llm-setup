@@ -3,15 +3,7 @@
 Local LLM Environment Setup Guide
 =================================
 
-Introduction
-------------
-
-In line with experimenting with LLMs locally, this guide details setting up a local lab environment. Using a new M4 Mini with 64 GB of unified memory enables running substantial models on the local network. To address remote access needs, the setup incorporates Tailscale for private networking via Wireguard, creating a private mesh that allows secure LLM access from anywhere without public internet exposure.
-
-System Overview
----------------
-
-This guide describes how to set up a local LLM environment using a Mac Mini as the server, with both local and remote access capabilities.
+In line with experimenting with LLMs locally, this guide details setting up a local lab environment. Using a new M4 Mini with 64 GB of unified memory enables running substantial models on the local network. To address remote access needs, the setup incorporates Tailscale for private networking via Wireguard, creating a private mesh that allows secure LLM access from anywhere without public internet exposure.  This guide describes how to set up a local LLM environment using a Mac Mini as the server, with both local and remote access capabilities.
 
 ### Physical Architecture
 
@@ -57,7 +49,7 @@ Verify installation:
 
     ollama --version
 
-### 2\. Pull LLM Models
+### 2\. Running LLM Models
 
 Download your preferred models. For example:
 
@@ -67,12 +59,17 @@ Download your preferred models. For example:
     ollama pull Qwen2.5-Coder:latest
     ollama pull llama3.3:latest
 
+Set the server to listen on all ipaddresses
+    user@host ~ % export OLLAMA_HOST=0.0.0.0
+    user@host ~ % echo $OLLAMA_HOST
+
 ### 3\. Setup Tailscale
 
 1.  Download Tailscale from [tailscale.com](https://tailscale.com/download)
-2.  Install on both Mac Mini and iOS device
-3.  Sign in with your Tailscale account on both devices
+2.  Install on Mac Mini, laptop and iOS device
+3.  Sign in with your Tailscale account on all devices
 4.  Note the Tailscale IP of your Mac Mini
+
 
 ### 4\. Install [UV Package Manager](https://astral.sh/blog/uv)
 
@@ -132,6 +129,7 @@ Troubleshooting
 *   Test connectivity: `ping [tailscale-ip]`
 *   Verify no firewall blocking: `sudo lsof -i :11434`
 *   By default MacOS will put the Mac Mini to sleep when not in use, make sure to change your energy settings to make sure the system is always available.
+*   Make sure the Ollama server is listening on all ports, otherwise it may not look available via tailscale.
 
 🔍 Model Loading Issues
 
