@@ -17,7 +17,7 @@ Physical setup showing Mac Mini M4 (64GB) connected to local network and devices
 *   **Tailscale:** For secure network connectivity
 *   **LLM CLI:** Command-line interface for model interaction
 *   **Enchanted:** iOS client for mobile access
-*   **UV:**Python package and project manager, written in Rust
+*   **UV:** Python package and project manager, written in Rust
 
 
 Prerequisites
