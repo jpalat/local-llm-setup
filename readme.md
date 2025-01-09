@@ -99,25 +99,20 @@ Verify installation:
 
     uv --version
 
-### 2\. Install LLM CLI Tool with UV
+### 2\. Run LLM CLI Tool with UV
 
-Install Simon Willison's LLM tool on my laptop using UV and use the [llm-ollama](https://github.com/taketwo/llm-ollama) to connect to ollama:
+To start I've been using the LLM cli from Simon Willison.  While I could do a full install, I've been trying out just using UV to run the client with minimal install.
 
-    # Create and activate new virtual environment
-    uv venv .venv
-    source .venv/bin/activate
-    
-    # Install LLM and Ollama plugin
-    uv pip install llm llm-ollama
 
 Configure LLM with UV for Ollama access:
 
     # Set up alias for easy access
-    alias ll33='OLLAMA_HOST=http://[tailscale-ip]:11434 uvx --with llm --with llm-ollama llm -m llama3.3'
+    alias oll='OLLAMA_HOST=http://[tailscale-ip]:11434 uvx --with llm --with llm-ollama llm '
     
     # Test the connection
-    ll33 "Hello, world!"
+    oll -m phi4 "Hello, world!"
 
+### iPhone / iPad
 ### 3\. Setup Enchanted iOS App
 
 1.  Download Enchanted from the App Store
@@ -135,7 +130,7 @@ Configure LLM with UV for Ollama access:
 Summary & Lessons Learned.
 --------------------------
 
-With this setup I can reach my private llm setup from anywhere on any device I choose to secure. Tailscale makes it easy to connect peer-to-peer wireguard connections for private networking allowing me to access self-hosted models without making them publically available or opening up my network attack surface. I can now grab and test new models as quickly as I can find them! The Mac Mini is tiny, quiet and sips power, at some point I may want to upgrade to a serious GPU system but for now it meets my needs very well. I'm starting to get the hang of uv and using it to quickly test new packages for python has also been fun.
+With this setup I can reach my private llm setup from anywhere on any device I choose to secure. Tailscale makes it easy to connect peer-to-peer wireguard connections for private networking allowing me to access self-hosted models without making them publically available or opening up my network attack surface. I can now grab and test new models as quickly as I can find them! The Mac Mini is tiny, quiet and sips power, at some point I may want to upgrade to a serious GPU system but for now it meets my needs very well (the Nvidia DIGITS announcement has caught my attention!) This setup makes it easy for me to understand the difference between different models by testing quickly.
 
 Troubleshooting
 ---------------
