@@ -25,25 +25,34 @@ Prerequisites
 
 ### Hardware
 
-*   Mac Mini M4 with 64GB unified memory
+Server
+*   Mac Mini M4 with 64GB unified memory 1TB storage.
+
+Clients:
 *   iOS device for mobile access
 *   Laptop
-*   Local router with Ethernet/WiFi
 
 ### Network
 
 *   Stable internet connection
 *   Administrator access on all devices
+*   Local router with Ethernet/WiFi
 
 
-Step-by-Step Setup Instructions
+
+Server Setup Instructions
 -------------------------------
+For the server I'm using an Mac Mini M4Pro with 64 gb of memory and 1 TB of storage running Mac OS Sequoia (macOS 15.2).
 
 ### 1\. Install Ollama on Mac Mini
 
 Download and install Ollama from the official website:
 
     curl -fsSL https://ollama.com/install.sh | sh
+
+or using brew
+
+    brew install ollama
 
 Verify installation:
 
@@ -56,12 +65,19 @@ Download your preferred models. For example:
     # Pull recommended models
     ollama pull llama3.2-vision:latest
     ollama pull smollm2:latest
-    ollama pull Qwen2.5-Coder:latest
+    ollama pull phi4
     ollama pull llama3.3:latest
 
 Set the server to listen on all ipaddresses
     user@host ~ % export OLLAMA_HOST=0.0.0.0
-    user@host ~ % echo $OLLAMA_HOST
+    user@host ~ % ollama serve
+
+To run the server on startup you can use the brew command
+    brew services start ollama
+
+To set the host id you'll want to set the OLLAMA_HOST in launchctl. 
+    launchctl setenv OLLAMA_HOST "0.0.0.0"
+
 
 ### 3\. Setup Tailscale
 
@@ -70,8 +86,10 @@ Set the server to listen on all ipaddresses
 3.  Sign in with your Tailscale account on all devices
 4.  Note the Tailscale IP of your Mac Mini
 
+## Clients
 
-### 4\. Install [UV Package Manager](https://astral.sh/blog/uv)
+### Laptop
+### 1\. Install [UV Package Manager](https://astral.sh/blog/uv)
 
 Install UV using the official installation script:
 
@@ -81,7 +99,7 @@ Verify installation:
 
     uv --version
 
-### 5\. Install LLM CLI Tool with UV
+### 2\. Install LLM CLI Tool with UV
 
 Install Simon Willison's LLM tool on my laptop using UV and use the [llm-ollama](https://github.com/taketwo/llm-ollama) to connect to ollama:
 
@@ -100,7 +118,7 @@ Configure LLM with UV for Ollama access:
     # Test the connection
     ll33 "Hello, world!"
 
-### 6\. Setup Enchanted iOS App
+### 3\. Setup Enchanted iOS App
 
 1.  Download Enchanted from the App Store
 2.  Open the app and go to Settings
