@@ -42,7 +42,7 @@ Clients:
 
 Server Setup Instructions
 -------------------------------
-For the server I'm using an Mac Mini M4Pro with 64 gb of memory and 1 TB of storage running Mac OS Sequoia (macOS 15.2).
+For the server I'm using an Mac Mini M4Pro with 64 gb of memory and 1 TB of storage running Mac OS Sequoia (macOS 15.2).  64 GB of Unified memory allows even some of the larger open weight models to run (llama 3.3 for example).
 
 ### 1\. Install Ollama on Mac Mini
 
@@ -130,7 +130,7 @@ Configure LLM with UV for Ollama access:
 Summary & Lessons Learned.
 --------------------------
 
-With this setup I can reach my private llm setup from anywhere on any device I choose to secure. Tailscale makes it easy to connect peer-to-peer wireguard connections for private networking allowing me to access self-hosted models without making them publically available or opening up my network attack surface. I can now grab and test new models as quickly as I can find them! The Mac Mini is tiny, quiet and sips power, at some point I may want to upgrade to a serious GPU system but for now it meets my needs very well (the Nvidia DIGITS announcement has caught my attention!) This setup makes it easy for me to understand the difference between different models by testing quickly.
+With this configuration I can reach my private llm setup from anywhere on any device I choose to secure. Tailscale makes it easy to connect peer-to-peer wireguard connections for private networking allowing me to access self-hosted models without making them publically available. I can now grab and test new models as quickly as I can find them! The Mac Mini is tiny, quiet and sips power, although at some point I may want to upgrade to a serious GPU system but for now it meets my needs very well (the Nvidia DIGITS announcement has caught my attention!) Looking forward to testing out more workflows with my private LLM!
 
 Troubleshooting
 ---------------
